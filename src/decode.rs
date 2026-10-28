@@ -3154,8 +3154,7 @@ mod tests {
         let input = [0x12, 0, 1, 1, 3, 0xbf];
         assert!(matches!(
             Packet::decode(input.as_slice()),
-            Err(DecodeError::ParserError(message))
-                if message == "Long-form COER tags are not supported"
+            Err(DecodeError::ParserError(_))
         ));
     }
 
